@@ -1,0 +1,24 @@
+OHLI SOCIAL v2.9.0 — CATATAN PERUBAHAN
+
+Fokus versi ini: perbaikan editor media, interaksi Story, dan ruang grup/Channel di perangkat mobile. Bagian lain dipertahankan sebisa mungkin.
+
+PERUBAHAN YANG DITERAPKAN
+1. Editor foto dan video kini sama-sama menampilkan tombol Tambah Musik untuk memilih katalog audio. Pilihan audio disertakan sebagai referensi music_id ketika posting foto maupun video diterbitkan. Untuk foto, audio ditautkan ke postingan; browser tidak membuat file video dari foto statis.
+2. Tombol Gunakan Audio dapat kembali ke editor yang sedang dibuka baik untuk foto maupun video.
+3. Story mendukung tekan-tahan di bagian tengah untuk menjeda video dan melepas sentuhan untuk melanjutkan. Ditambahkan indikator jeda.
+4. Panel Penonton dan Simpan ke Sorotan dibuka sebagai modal di atas Story yang masih terbuka, agar pengguna tidak harus keluar dari Story terlebih dahulu.
+5. Dialog Grup dan Channel menjadi ruang penuh pada layar kecil, dengan area percakapan yang dapat digulir dan form pesan tetap di bagian bawah.
+6. Versi Android dinaikkan ke versionCode 20 / versionName 2.9.0.
+
+BATASAN YANG BELUM BOLEH DIANGGAP SELESAI
+- Statistik viewer Story bergantung pada data yang benar-benar direkam endpoint server. Frekuensi replay dan likes per penonton perlu tes integrasi dengan beberapa akun.
+- Pesan sekali lihat (view-once) belum dijamin setara WhatsApp: diperlukan skema status dibuka di server dan kebijakan akses media yang memblokir pengambilan ulang, bukan hanya menyembunyikan UI.
+- Foto profil Chat dan OHLI Social belum memiliki dua berkas avatar independen yang tersinkron server; perlu perubahan model akun/API.
+- Polling/voting grup, pin/arsip Story teman, dan reaksi Channel masih memerlukan endpoint backend khusus sebelum dapat dinyatakan lengkap.
+- Audio pada foto disimpan sebagai referensi musik untuk postingan; pemutaran audio dengan durasi/loop memerlukan player postingan yang secara eksplisit membaca music_id.
+
+VALIDASI LOKAL
+- Node.js --check untuk ohli-social.js.
+- Pemeriksaan sintaks untuk script inline index.html.
+- Pemeriksaan keseimbangan kurung CSS dan integritas ZIP.
+- APK dan pengujian perangkat fisik belum dilakukan pada lingkungan ini.

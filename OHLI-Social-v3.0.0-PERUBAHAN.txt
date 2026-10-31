@@ -1,0 +1,36 @@
+OHLI SOCIAL v3.0.0 — PERUBAHAN BACKEND & FITUR
+
+1. FOTO PROFIL CHAT / SOCIAL
+- Pilihan scope both, social, chat tersimpan ketika mengunggah foto.
+- Endpoint /api/avatar dan /api/chat-avatar melayani foto yang tepat.
+- Editor profil utama dan sosial memulihkan pilihan terakhir dari /api/me.
+
+2. PESAN SEKALI LIHAT
+- Foto, voice note, video, dan file didukung.
+- Server menolak pembukaan ulang (HTTP 410).
+- Endpoint media normal tidak bisa dipakai untuk mengambil ulang file sekali lihat.
+- Video/file memakai onceKey sementara 10 menit agar dukungan HTTP Range tetap bekerja; Cache-Control no-store.
+- Ini bukan DRM dan tidak mencegah screenshot atau perekaman layar.
+
+3. ANALITIK STORY
+- Viewer unik, total view, last seen, jumlah replay, daftar penyuka dan waktu like; panel analitik tersedia dari Story OHLI maupun Story Chat.
+- Data disimpan di file status/views JSON yang sudah ada.
+
+4. PIN & ARSIP STORY TEMAN
+- Koleksi pin/archive privat per akun, tambah/hapus dan buka kembali melalui UI.
+
+5. POLLING GRUP
+- 2–8 opsi, hak akses anggota divalidasi server, satu suara aktif per akun, suara dapat diubah.
+- Hitungan, persentase, pilihan sendiri muncul di UI.
+
+6. REAKSI CHANNEL
+- Emoji 👍 ❤️ 😂 😮 🎉 🔥. Satu reaksi per akun per posting, bisa diubah/dibatalkan.
+- Agregat dan reaksi sendiri dikembalikan API dan ditampilkan UI.
+
+PENYIMPANAN
+- Backend Android tetap memakai JSON di getFilesDir(); file lama dipertahankan.
+- Migration reference PostgreSQL 003 disertakan; tidak dieksekusi oleh APK.
+
+VERSI
+- versionName 3.0.0, versionCode 21, health endpoint 3.0.0.
+- Pemeriksaan statis JS/HTML/CSS/workflow/ZIP dilakukan. APK, dua akun, dan perangkat fisik belum diuji di sesi ini.
